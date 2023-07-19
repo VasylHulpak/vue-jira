@@ -18,15 +18,15 @@ const list1 = ref(new Array(3).fill(null).map((_, i) => ({
   })))
 
 const list2 = ref(new Array(4).fill(null).map((_, i) => ({
-    name: 'Task' + ((i + 2) * i + 1),
-    id: (i + 2) * i + 1,
+    name: 'Task' + (3 + i + 1),
+    id: 3 + i + 1,
     state: CardState.InProgress,
     date: new Date().toLocaleString()
   })))
 
 const list3 = ref(new Array(5).fill(null).map((_, i) => ({
-    name: 'Task' + ((i + 3) * i + 1),
-    id: (i + 3) * i + 1,
+    name: 'Task' + (7 + i + 1),
+    id: 7 + i + 1,
     state: CardState.Done,
     date: new Date().toLocaleString()
   })))
