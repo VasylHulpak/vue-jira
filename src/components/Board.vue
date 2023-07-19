@@ -7,8 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import BoardColumn from '@/components/BoardColumn.vue'
-import { CardState } from '@/models/CardState'
+import BoardColumn from '../components/BoardColumn.vue'
+import { CardState } from '../models/CardState'
+import { ref } from 'vue'
 
 const list1 = ref(new Array(3).fill(null).map((_, i) => ({
     name: 'Task' + (i + 1),

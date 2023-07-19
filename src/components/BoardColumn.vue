@@ -23,17 +23,18 @@
 <script setup lang="ts">
 import { VueDraggableNext } from 'vue-draggable-next'
 import { Plus, Check } from '@element-plus/icons-vue'
-import { CardState } from '@/models/CardState'
+import { CardState } from '../models/CardState'
+import { ref } from 'vue'
 
-const props = defineProps({
+const props = defineProps<{
   title: String,
-  tasks: Array,
+  tasks: any[],
   state: CardState
-})
+}>()
 
 const list = ref(props.tasks)
 
-function save(l) {
+function save(l: any) {
   l.id = list.value.length + 1
 }
 
@@ -41,8 +42,8 @@ function addTask(state: CardState) {
   list.value.push({ name: '', id: 0, state: state, date: new Date().toDateString() })
 }
 
-function change(e) {
-  list.value.forEach((item, index) => (item.order = index))
+function change() {
+  list.value.forEach((item: any, index: number) => (item.order = index))
 }
 </script>
 

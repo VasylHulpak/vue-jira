@@ -8,5 +8,5 @@ import Layout from './layouts/Layout.vue'
 <style>
 #app {
   width: 100%;
-
-}</style>
+}
+</style>

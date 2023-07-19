@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
-import BoardColumn from '../BoardColumn.vue'
+import BoardColumn from '../../components/BoardColumn.vue'
 
 describe('BoardColumn', () => {
   it('renders property', () => {

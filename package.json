@@ -2,12 +2,12 @@
   "name": "vue-jira",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test:unit": "vitest"
+    "test:unit": "vitest",
+    "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
@@ -21,16 +21,16 @@
     "@types/jsdom": "^21.1.1",
     "@types/node": "^18.16.17",
     "@vitejs/plugin-vue": "^4.2.3",
-    "@vitest/ui": "^0.33.0",
     "@vue/test-utils": "^2.3.2",
-    "cypress": "^12.17.1",
-    "jsdom": "^22.1.0",
+    "@vue/tsconfig": "^0.4.0",
     "typescript": "^5.0.2",
-    "unplugin-auto-import": "^0.16.6",
-    "vite": "^4.4.0",
     "vite-plugin-windicss": "^1.9.0",
-    "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.32.0",
+    "jsdom": "latest",
+    "cypress": "^12.14.0",
+    "npm-run-all": "^4.1.5",
+    "start-server-and-test": "^2.0.0",
+    "vite": "latest",
+    "vitest": "latest",
     "vue-tsc": "^1.8.3",
     "windicss": "^3.5.6"
   }
