@@ -6,7 +6,7 @@
         <el-icon><Plus/></el-icon>
       </el-button>
     </div>
-    <VueDraggableNext class="list-group grid gap-10px cursor-pointer" :list="tasks" group="people" item-key="order" @change="change">
+    <VueDraggableNext handle=".list-group-item" class="list-group grid gap-10px cursor-pointer" :list="tasks" group="people" @change="change">
         <div v-for="task in tasks" :key="task.order" class="list-group-item p-20px rounded-5px border-1px border-[#409eff] bg-white font-display text-left h-100px">
           <div v-if="task.id !== 0" class="pb-10px"> {{ task.name }}</div>
           <el-input v-else class="pb-10px" v-model="task.name" placeholder="Task title"/>
@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { VueDraggableNext } from 'vue-draggable-next'
 import { Plus, Check } from '@element-plus/icons-vue'
-import { CardState } from '../models/CardState'
+import { CardState } from '@/models/CardState'
 
 const props = defineProps({
   title: String,
