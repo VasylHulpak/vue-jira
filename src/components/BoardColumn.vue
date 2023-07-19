@@ -3,15 +3,12 @@
     <div class="flex justify-between">
       <h3 class="font-bold font-mono">{{ title }}</h3>
       <el-button @click="addTask(state)">
-        <el-icon>
-          <Plus/>
-        </el-icon>
+        <el-icon><Plus/></el-icon>
       </el-button>
     </div>
     <VueDraggableNext class="list-group grid gap-10px cursor-pointer" :list="tasks" group="people" item-key="id">
       <transition-group v-for="task in tasks" :key="task.id">
-        <div :key="task.id"
-             class="list-group-item p-20px rounded-5px border-1px border-[#409eff] bg-white font-display text-left">
+        <div :key="task.id" class="list-group-item p-20px rounded-5px border-1px border-[#409eff] bg-white font-display text-left">
           <div v-if="task.id !== 0" class="pb-10px"> {{ task.name }}</div>
           <el-input v-else class="pb-10px" v-model="task.name" placeholder="Task title"/>
           <div class="flex justify-between">
@@ -26,7 +23,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, defineProps } from 'vue'
 import { VueDraggableNext } from 'vue-draggable-next'
 import { Plus, Check } from '@element-plus/icons-vue'
 import { CardState } from '../models/CardState'
