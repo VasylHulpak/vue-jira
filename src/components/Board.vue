@@ -1,0 +1,34 @@
+<template>
+  <div class="grid grid-cols-3 gap-20px w-100">
+    <BoardColumn :tasks="list1" title="ToDo" :state="CardState.Todo"/>
+    <BoardColumn :tasks="list2" title="InProgress" :state="CardState.InProgress"/>
+    <BoardColumn :tasks="list3" title="Done" :state="CardState.Done"/>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import BoardColumn from '../components/BoardColumn.vue'
+import { CardState } from '../models/CardState'
+
+const list1 = ref(new Array(3).fill(null).map((a, i) => ({
+    name: 'Task' + i + 1,
+    id: i + 1,
+    state: CardState.Todo,
+    date: new Date().toLocaleString()
+  })))
+
+const list2 = ref(new Array(4).fill(null).map((a, i) => ({
+    name: 'Task' + (i + 2) * i + 1,
+    id: (i + 2) * i + 1,
+    state: CardState.InProgress,
+    date: new Date().toLocaleString()
+  })))
+
+const list3 = ref(new Array(5).fill(null).map((a, i) => ({
+    name: 'Task' + (i + 3) * i + 1,
+    id: (i + 3) * i + 1,
+    state: CardState.Done,
+    date: new Date().toLocaleString()
+  })))
+</script>
